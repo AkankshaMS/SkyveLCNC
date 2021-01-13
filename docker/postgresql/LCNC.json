@@ -1,0 +1,123 @@
+{
+	
+
+
+	"trace": {
+	
+		"xml": false,
+	
+		"http": true,
+		"query": false,
+		"command": false,
+		"faces": false,
+		"sql": false,
+		"content": false,
+		"security": true,
+		"bizlet": false,
+		"dirty": false
+	},
+	"content": {
+		"directory": "{SKYVE_CONTENT:/C:/skyve/content/LCNC/}",
+		"gcCron": "0 7 0/1 1/1 * ? *",
+		"fileStorage": true
+	},
+	"thumbnail": {
+
+		"concurrentThreads": 10,
+		
+		"subsamplingMinimumTargetSize": 512,
+		"fileStorage": true,
+
+		"directory": null
+	},
+	"url": {
+		"server": "${SKYVE_URL:http://localhost:8080}",
+		"context": "${SKYVE_CONTEXT:/LCNC}",
+		"home": "/"
+	},
+	"conversations": {
+		"heapSizeEntries": 1000,
+		"offHeapSizeMB": 128,
+		"diskSizeGB": 10,
+		"expiryTimeMinutes": 60
+	
+	},
+	"dataStores": {
+		"skyve": {
+			"jndi": "java:/LCNCDB",
+			"dialect": "${SKYVE_DATASTORE_DIALECT:org.skyve.impl.persistence.hibernate.dialect.H2SpatialDialect}",
+			"oltpConnectionTimeoutInSeconds": 30,
+			"asyncConnectionTimeoutInSeconds": 300
+		}
+	},
+	"hibernate": {
+		"dataStore": "skyve",
+		"ddlSync": true,
+		"catalog": null,
+		"schema": null,
+		"prettySql": false,
+		"caches": {
+			"eternal": {
+				"heapSizeEntries": 10,
+				"offHeapSizeMB": 0,
+				"expiryPolicy": "eternal" 
+			},
+			"reference": {
+				"heapSizeEntries": 1000,
+				"offHeapSizeMB": 0,
+				"expiryPolicy": "timeToIdle", 
+				"expiryTimeMinutes": 10
+			}
+		}
+	},
+	"factories": {
+		"persistenceClass": null,
+		"repositoryClass": null,
+		"contentManagerClass": null
+	},
+	"smtp": {
+		"server": "${SKYVE_SMTP_SERVER:localhost}",
+		"port": 465,
+		"uid": "${SKYVE_SMTP_UID:null}",
+		"pwd": "${SKYVE_SMTP_PWD:null}",
+		"properties": null,
+		"sender": "mailer@skyve.org",
+		"testBogusSend": false,
+		"testRecipient": "1nt17cs016.akanksha@nmit.ac.in"
+	},
+	"map": {
+		"type": "leaflet",
+		"layers": "[L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {maxZoom: 19, attribution: '&copy; <a href=\\\"https://www.openstreetmap.org/copyright\\\">OpenStreetMap</a> contributors'})]"
+		
+	},
+	"api": {
+		"googleMapsV3Key": null,
+		"googleRecaptchaSiteKey": null,
+		"ckEditorConfigFileUrl": null
+	},
+	"account": {
+		"passwordHashingAlgorithm": "bcrypt",
+		"passwordExpiryInDays": null,
+		"passwordHistoryRetention": null,
+		"accountLockoutThreshold": 3,
+		"accountLockoutDurationMultipleInSeconds": 10,
+		"allowUserSelfRegistration": true
+	},
+	"environment": {
+		"identifier": "${IDENTIFIER:null}",
+		"devMode": true,
+		"customer": "unisys",
+		"jobScheduler": true,
+
+		"moduleDirectory": null,
+		"supportEmailAddress": "1nt17cs016.akanksha@nmit.ac.in",
+		"showSetup": true
+	},
+
+	"bootstrap": {
+		"customer": "unisys",
+		"user": "${BOOTSTRAP_USERNAME:setup}",
+		"email": "1nt17cs016.akanksha@nmit.ac.in",
+		"password": "${BOOTSTRAP_PASSWORD:setup}"
+	}
+}
